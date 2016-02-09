@@ -1,8 +1,12 @@
 base:
   '*':
-    - tis-root-certificate
     - nodejs4
-    - ntp
-    - kerberos
     - vagrant
     - workstation
+  'jornh':
+    - tis-root-certificate
+    - ntp
+    - kerberos
+    - jornh
+  'jornh_niet_tis':
+    - jornh
