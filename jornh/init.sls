@@ -18,6 +18,13 @@ gitconfig.append:
         push:
           default: current
 
+gradleconfig.create:
+  file.managed:
+    - name: /home/jornh/.gradle/gradle.properties
+    - source: salt://jornh/gradle.properties
+    - user: jornh
+    - group: jornh
+
 include:
   - jornh/worcade
 
