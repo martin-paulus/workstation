@@ -10,6 +10,8 @@ maven:
   pkg.installed
 mercurial:
   pkg.installed
+chromium:
+  pkg.installed
 pidgin.packages:
   pkg.installed:
     - pkgs:
