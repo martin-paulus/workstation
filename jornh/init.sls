@@ -17,3 +17,12 @@ gitconfig.append:
           name: Jorn Hertsig
         push:
           default: current
+
+include:
+  - jornh/worcade
+
+#https://Jorn86@bitbucket.org/Jorn86/card-collection-app:
+#  hg.latest:
+#    - target: /home/jornh/repositories/card-collection-app
+#    - user: jornh
+
