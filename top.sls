@@ -7,5 +7,8 @@ base:
     - tis-root-certificate
     - ntp
     - kerberos
+    - tis-mounts
   'jornh*':
     - jornh
+  'jornh_tis':
+    - jornh/tis

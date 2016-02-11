@@ -1,25 +1,7 @@
-https://github.com/teamsolar/worcade.git:
+{% for repo in ['worcade','configuration','dollhouse', 'datasource' ,'topdesk-rest'] %}
+https://github.com/teamsolar/{{repo}}.git:
   git.latest:
-    - target: /home/jornh/repositories/solar/worcade
+    - target: /home/jornh/repositories/solar/{{repo}}
     - user: jornh
-
-https://github.com/teamsolar/configuration.git:
-  git.latest:
-    - target: /home/jornh/repositories/solar/configuration
-    - user: jornh
-
-https://github.com/teamsolar/dollhouse.git:
-  git.latest:
-    - target: /home/jornh/repositories/solar/dollhouse
-    - user: jornh
-
-https://github.com/teamsolar/datasource.git:
-  git.latest:
-    - target: /home/jornh/repositories/solar/datasource
-    - user: jornh
-
-https://github.com/teamsolar/topdesk-rest.git:
-  git.latest:
-    - target: /home/jornh/repositories/solar/topdesk-rest
-    - user: jornh
-
+    - unless: test /home/jornh/repositories/solar/{{repo}}/.git
+{% endfor %}

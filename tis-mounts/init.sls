@@ -1,0 +1,2 @@
+libpam-mount:
+  pkg.installed
