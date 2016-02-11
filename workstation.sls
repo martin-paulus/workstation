@@ -1,5 +1,7 @@
 git:
   pkg.installed
+gitk:
+  pkg.installed
 vim:
   pkg.installed
 openjdk-7-jdk:
