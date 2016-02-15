@@ -11,7 +11,7 @@ gitconfig.append:
         url "https://":
           insteadOf: git://
         credential:
-          helper: cache
+          helper: '"cache --timeout=28800"'
         user:
           email: jorn86@gmail.com
           name: Jorn Hertsig
@@ -28,8 +28,24 @@ gradleconfig.create:
 include:
   - jornh/worcade
 
-#https://Jorn86@bitbucket.org/Jorn86/card-collection-app:
-#  hg.latest:
-#    - target: /home/jornh/repositories/card-collection-app
+#cardcollection:
+#  hg.clone:
+#    - cwd: https://Jorn86@bitbucket.org/Jorn86/card-collection-app
+#    - repository: /home/jornh/repositories/card-collection-app
 #    - user: jornh
+#    - unless: test -d /home/jornh/repositories/card-collection-app/.hg
 
+hgconfig:
+  ini.options_present:
+    - name: /home/jornh/.hgrc
+    - sections:
+        auth:
+          bb.schemes: https
+          bb.prefix: bitbucket.org/Jorn86
+          bb.username: Jorn86
+# Salt does not seem to understand empty values (setting None instead, which breaks hg)
+#        extensions:
+#          purge:
+#          color:
+#          fetch:
+#          rebase:
