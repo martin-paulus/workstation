@@ -6,3 +6,12 @@ nodejs4.repo:
     - key_url: salt://nodejs4/nodesource.gpg.key
 nodejs:
   pkg.installed
+
+npm:
+  pkg.installed
+
+npm.globals:
+  npm.installed:
+    - pkgs:
+      - typings
+      - webpack-dev-server

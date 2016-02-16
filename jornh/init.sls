@@ -28,14 +28,18 @@ gradleconfig.create:
 include:
   - jornh/worcade
 
-#cardcollection:
-#  hg.clone:
-#    - cwd: https://Jorn86@bitbucket.org/Jorn86/card-collection-app
-#    - repository: /home/jornh/repositories/card-collection-app
-#    - user: jornh
-#    - unless: test -d /home/jornh/repositories/card-collection-app/.hg
+hg clone https://Jorn86@bitbucket.org/Jorn86/card-collection-app /home/jornh/repositories/card-collection-app:
+  cmd.run:
+    - user: jornh
+    - unless: test -d /home/jornh/repositories/card-collection-app/.hg
 
-hgconfig:
+hgconfig.create:
+  file.managed:
+    - name: /home/jornh/.hgrc
+    - user: jornh
+    - group: jornh
+
+hgconfig.append:
   ini.options_present:
     - name: /home/jornh/.hgrc
     - sections:
@@ -43,9 +47,8 @@ hgconfig:
           bb.schemes: https
           bb.prefix: bitbucket.org/Jorn86
           bb.username: Jorn86
-# Salt does not seem to understand empty values (setting None instead, which breaks hg)
-#        extensions:
-#          purge:
-#          color:
-#          fetch:
-#          rebase:
+        extensions:
+          color: ''
+          fetch: ''
+          purge: ''
+          rebase: ''
