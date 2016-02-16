@@ -13,5 +13,12 @@ file_roots:
     - /home/jornh/<this repo>
 ```
 
-run salt: `sudo salt-call state.highstate`
+Join the domain:
+```
+sudo -i
+salt-call state.highstate
+kinit <username>@TIS.LOCAL # case sensitive
+net ads join -k createcomputer="Delft/Workstations/Linux Machines"
+```
 
+Restart, and log in with your domain credentials
