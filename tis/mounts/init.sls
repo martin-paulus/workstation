@@ -9,6 +9,12 @@ winbind.packages:
       - libnss-winbind
       - libpam-winbind
       - libpam-mount
+      - cifs-utils
+
+/home/{{user}}/network:
+  file.directory:
+    - user: {{user}}
+    - group: {{user}}
 
 /etc/samba/smb.conf:
   file.managed:

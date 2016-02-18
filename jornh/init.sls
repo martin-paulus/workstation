@@ -6,6 +6,7 @@ mercurial:
 include:
   - jornh/git
   - jornh/hg
+  - spotify
 
 hg clone https://Jorn86@bitbucket.org/Jorn86/card-collection-app /home/{{user}}/repositories/card-collection-app:
   cmd.run:

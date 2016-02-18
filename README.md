@@ -4,13 +4,13 @@ install salt-client: `sudo apt-get install salt-minion`
 
 in `/etc/salt/minion`, set:
 ```
-id: jornh
+id: <your_username>
 log_level: warning
 file_client: local
 local: True
 file_roots:
   base:
-    - /home/jornh/<this repo>
+    - </path/to/this/repo> # must be absolute path
 ```
 
 Join the domain:
