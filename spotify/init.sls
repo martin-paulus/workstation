@@ -1,3 +1,5 @@
+{% from 'top.sls' import user %}
+
 libgcrypt11.source:
   file.managed:
     - name: /tmp/libgcrypt11_1.5.0-5+deb7u4_amd64.deb
@@ -24,3 +26,11 @@ spotify.repo:
 
 spotify-client:
   pkg.installed
+
+spotify.settings:
+  file.managed:
+    - name: ~/.config/spotify/Users/jorn86-user/prefs
+    - source: salt://spotify/prefs
+    - unless: test -f ~/.config/spotify/Users/jorn86-user/prefs
+    - user: {{user}}
+    - group: {{user}}
