@@ -1,3 +1,12 @@
+/tmp/libgcrypt11_1.5.0-5+deb7u4_amd64.deb:
+  file.managed:
+    - source: salt://spotify/libgcrypt11_1.5.0-5+deb7u4_amd64.deb
+
+libcrypt11:
+  cmd.run:
+    - name: dpkg -i /tmp/libgcrypt11_1.5.0-5+deb7u4_amd64.deb
+    - unless: dpkg -s libgcrypt11
+
 spotify.repo:
   pkgrepo.managed:
     - humanname: spotify
