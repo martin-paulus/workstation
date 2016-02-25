@@ -1,3 +1,5 @@
+{% from 'top.sls' import user %}
+
 pidgin.packages:
   pkg.installed:
     - pkgs:
@@ -9,3 +11,9 @@ include:
   - ntp
   - kerberos
   - tis/mounts
+
+/home/{{user}}/.m2/settings.xml:
+  file.managed:
+    - source: salt://tis/maven.settings.xml
+    - user: {{user}}
+    - group: {{user}}
