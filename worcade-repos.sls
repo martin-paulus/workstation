@@ -1,6 +1,6 @@
 {% from 'top.sls' import user %}
 
-{% for repo in ['worcade','configuration','dollhouse', 'datasource' ,'topdesk-rest', 'ping'] %}
+{% for repo in ['worcade','configuration','dollhouse', 'datasource' ,'topdesk-rest', 'ping', 'salt'] %}
 https://github.com/teamsolar/{{repo}}.git:
   git.latest:
     - target: /home/{{user}}/repositories/solar/{{repo}}

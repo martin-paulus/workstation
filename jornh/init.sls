@@ -20,3 +20,9 @@ spotify.settings:
     - unless: test -f ~/.config/spotify/Users/jorn86-user/prefs
     - user: {{user}}
     - group: {{user}}
+
+/home/{{user}}/.bashrc:
+  file.managed:
+    - source: salt://jornh/bashrc
+    - user: {{user}}
+    - group: {{user}}
