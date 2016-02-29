@@ -3,6 +3,9 @@
 mercurial:
   pkg.installed
 
+tortoisehg:
+  pkg.installed
+
 include:
   - jornh/git
   - jornh/hg
