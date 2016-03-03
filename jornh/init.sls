@@ -9,12 +9,8 @@ tortoisehg:
 include:
   - jornh/git
   - jornh/hg
+  - jornh/cardcollection-repo
   - spotify
-
-hg clone https://Jorn86@bitbucket.org/Jorn86/card-collection-app /home/{{user}}/repositories/card-collection-app:
-  cmd.run:
-    - user: {{user}}
-    - unless: test -d /home/{{user}}/repositories/card-collection-app/.hg
 
 spotify.settings:
   file.managed:
@@ -29,3 +25,7 @@ spotify.settings:
     - source: salt://jornh/bashrc
     - user: {{user}}
     - group: {{user}}
+
+/etc/sysctl.conf:
+  file.managed:
+    - source: salt://jornh/sysctl.conf

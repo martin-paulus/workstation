@@ -10,10 +10,6 @@ hgconfig.append:
   ini.options_present:
     - name: /home/{{user}}/.hgrc
     - sections:
-        auth:
-          bb.schemes: https
-          bb.prefix: bitbucket.org/Jorn86
-          bb.username: Jorn86
         extensions:
           color: ''
           fetch: ''
