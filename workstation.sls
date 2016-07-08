@@ -11,6 +11,6 @@ dev-tools:
 
 include:
   - gradle
-  - nodejs4
+  - nodejs6
   - vagrant
   - worcade-repos
